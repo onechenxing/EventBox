@@ -28,7 +28,6 @@
     5.移除对象上的所有事件监听：   EventBox.RemoveAll(this);
     6.清除系统内所有事件监听：     EventBox.Dispose();
 */
-
 using System;
 using System.Collections.Generic;
 
