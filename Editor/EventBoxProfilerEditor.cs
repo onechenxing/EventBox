@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
-namespace CxLib.EventBox
+namespace CxLib.Editor
 {
     /// <summary>
     /// EventBox监控窗口
