@@ -20,9 +20,9 @@
     }
     2.发送事件：       EventBox.Send(MyEventBoxType.EVENT_TEST, 1);
     3.接收事件：       EventBox.Add(MyEventBoxType.EVENT_TEST, OnEventTestHandler);
-                       private void OnEventTestHandler(string eventType, object eventData)
+                       private void OnEventTestHandler(object eventData)
                        {
-                          Debug.Log("type:" + eventType + ",data:" + eventData);
+                          Debug.Log("[EVENT_TEST] data:" + eventData);
                        }
     4.移除事件：       EventBox.Remove(MyEventBoxType.EVENT_TEST, OnEventTestHandler);
     5.移除对象上的所有事件监听：   EventBox.RemoveAll(this);
@@ -40,9 +40,8 @@ public class EventBox
     /// <summary>
     /// 事件监听函数代理
     /// </summary>
-    /// <param name="eventType">事件类型</param>
     /// <param name="eventData">携带数据</param>
-    public delegate void EventBoxHandler(string eventType, object eventData);
+    public delegate void EventBoxHandler(object eventData);
 
     /// <summary>
     /// 事件监听记录表
@@ -66,7 +65,7 @@ public class EventBox
             var handlerList = _listenerDic[type];
             for (var i = 0; i < handlerList.Count; i++)
             {
-                handlerList[i](type, data);
+                handlerList[i](data);
             }
         }
     }
