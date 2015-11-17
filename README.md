@@ -1,35 +1,38 @@
 # EventBox
 
-[English Info]
 EventBox v1.1
 
-How to use:
+[English Info]
 
-1.Add Event Type:
-    /// <summary>
-    /// Test Event
-    /// data is int
-    /// </summary>
-    public const string EVENT_TEST = "MyEventBoxType_EVENT_TEST";
-    
-2.Send Event：       
-		EventBox.Send(MyEventBoxType.EVENT_TEST, 1);
+		How to use:
 		
-3.Receive Event：       
-		EventBox.Add(MyEventBoxType.EVENT_TEST, OnEventTestHandler);
-   private void OnEventTestHandler(object eventData)
-   {
-      Debug.Log("[EVENT_TEST] data:" + eventData);
-   }
-   
-4.Remove Event：
-   EventBox.Remove(MyEventBoxType.EVENT_TEST, OnEventTestHandler);
-   
-5.Remove All Event in Class(this):
-	EventBox.RemoveAll(this);
+		1.Add Event Type:
+		    /// <summary>
+		    /// Test Event
+		    /// data is int
+		    /// </summary>
+		    public const string EVENT_TEST = "MyEventBoxType_EVENT_TEST";
+		    
+		2.Send Event：       
+				EventBox.Send(MyEventBoxType.EVENT_TEST, 1);
+				
+		3.Receive Event：       
+				EventBox.Add(MyEventBoxType.EVENT_TEST, OnEventTestHandler);
+		   private void OnEventTestHandler(object eventData)
+		   {
+		      Debug.Log("[EVENT_TEST] data:" + eventData);
+		   }
+		   
+		4.Remove Event：
+		   EventBox.Remove(MyEventBoxType.EVENT_TEST, OnEventTestHandler);
+		   
+		5.Remove All Event in Class(this):
+			EventBox.RemoveAll(this);
+
 
 
 [中文说明]
+
 C# 简化全局事件发送/接收类
 
     使用方式：
